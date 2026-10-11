@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "UserConfig": {
+      "title": "User Configuration",
+      "description": "Settings for the school and class",
+      "type": "object",
+      "properties": {
+        "institutionName": { "type": "string" },
+        "standard": { "type": "string" },
+        "section": { "type": "string" },
+        "adminUsername": { "type": "string" },
+        "adminPassword": { "type": "string" }
+      },
+      "required": ["institutionName"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student details",
+      "type": "object",
+      "properties": {
+        "sno": { "type": "string" },
+        "admNo": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["admNo", "name"]
+    },
+    "AttendanceRecord": {
+      "title": "Attendance Record",
+      "description": "Monthly attendance for a student",
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": "object",
+          "description": "Map of day numbers to session attendance",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "fn": { "type": "string", "enum": ["P", "A", "WH", "GH", "OH", "OT", ""] },
+              "an": { "type": "string", "enum": ["P", "A", "WH", "GH", "OH", "OT", ""] }
+            }
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "users/{userId}/config/settings": {
+      "schema": "UserConfig",
+      "description": "User specific settings"
+    },
+    "users/{userId}/students/{studentId}": {
+      "schema": "Student",
+      "description": "List of students for the user"
+    },
+    "users/{userId}/attendance/{month_studentId}": {
+      "schema": "AttendanceRecord",
+      "description": "Attendance records for students"
+    }
+  }
+}
