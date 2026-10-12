@@ -2277,44 +2277,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Today Present = Morning Present + Evening Present */}
-          <div className="rounded-2xl p-5 relative overflow-hidden flex items-center gap-4"
-            style={{background: 'linear-gradient(135deg, #065f46 0%, #10b981 100%)', boxShadow: '0 8px 24px rgba(16,185,129,0.28)'}}>
-            <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/10"/>
-            <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-              <CheckCircle2 className="text-white" style={{width: 22, height: 22}}/>
-            </div>
-            <div>
-              <p className="text-emerald-200 text-xs font-semibold">Today Present</p>
-              <p className="text-3xl font-black text-white leading-none mt-0.5">{todayPresent}</p>
-            </div>
-          </div>
-
-          {/* Today Absent = Morning Absent + Evening Absent */}
-          <div className="rounded-2xl p-5 relative overflow-hidden flex items-center gap-4"
-            style={{background: 'linear-gradient(135deg, #9a3412 0%, #ea580c 100%)', boxShadow: '0 8px 24px rgba(234,88,12,0.28)'}}>
-            <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/10"/>
-            <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-              <XCircle className="text-white" style={{width: 22, height: 22}}/>
-            </div>
-            <div>
-              <p className="text-orange-200 text-xs font-semibold">Today Absent</p>
-              <p className="text-3xl font-black text-white leading-none mt-0.5">{todayAbsent}</p>
-            </div>
-          </div>
-
-          {/* Avg */}
-          <div className="rounded-2xl p-5 relative overflow-hidden flex items-center gap-4"
-            style={{background: 'linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%)', boxShadow: '0 8px 24px rgba(124,58,237,0.28)'}}>
-            <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/10"/>
-            <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-              <Percent className="text-white" style={{width: 22, height: 22}}/>
-            </div>
-            <div>
-              <p className="text-purple-200 text-xs font-semibold">Avg Attendance</p>
-              <p className="text-3xl font-black text-white leading-none mt-0.5">{avgAttendance}%</p>
-            </div>
-          </div>
         </div>
       </div>
 
